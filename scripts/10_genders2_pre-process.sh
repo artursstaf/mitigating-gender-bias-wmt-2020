@@ -2,34 +2,24 @@
 
 cd ..
 
-# Get randomized genders
 mkdir data/genders2
-python scripts/python/randomly_include_genders.py \
-    --genders data/corpus.genders.en \
-    >data/genders2/corpus.threshold-genders.en
 
-python scripts/python/randomly_include_genders.py \
-    --genders data/newsdev2017.genders.en \
-    >data/genders2/newsdev2017.threshold-genders.en
+for file in newsdev2017 corpus; do
+    # Get randomized genders
+    python scripts/python/randomly_include_genders.py \
+    --genders data/$file.genders.en \
+    >data/genders2/$file.threshold-genders.en
 
-# Get corresponding BPE format for genders
-python scripts/python/genders_bpe.py --genders data/genders2/newsdev2017.threshold-genders.en \
-    --bpe_sentences data/newsdev2017.tc.BPE.en \
-    >data/genders2/newsdev2017.threshold-genders.BPE.en
+    # Get corresponding BPE format for genders
+    python scripts/python/genders_bpe.py --genders data/genders2/$file.threshold-genders.en \
+    --bpe_sentences data/$file.tc.BPE.en \
+    >data/genders2/$file.threshold-genders.BPE.en
 
-python scripts/python/genders_bpe.py --genders data/genders2/corpus.threshold-genders.en \
-    --bpe_sentences data/corpus.tc.BPE.en \
-    >data/genders2/corpus.threshold-genders.BPE.en
-
-# Format data for second experiment
-cat data/genders2/corpus.threshold-genders.BPE.en data/genders1/corpus.u-genders.BPE.en >data/genders2/corpus.genders.BPE.en
-cat data/genders2/newsdev2017.threshold-genders.BPE.en data/genders1/newsdev2017.u-genders.BPE.en >data/genders2/newsdev2017.genders.BPE.en
-
-cat data/corpus.tc.BPE.en data/corpus.tc.BPE.en >data/genders2/corpus.tc.BPE.en
-cat data/corpus.tc.BPE.lv data/corpus.tc.BPE.lv >data/genders2/corpus.tc.BPE.lv
-
-cat data/newsdev2017.tc.BPE.en data/newsdev2017.tc.BPE.en >data/genders2/newsdev2017.tc.BPE.en
-cat data/newsdev2017.tc.BPE.lv data/newsdev2017.tc.BPE.lv >data/genders2/newsdev2017.tc.BPE.lv
+    # Format data for second experiment
+    cat data/genders2/$file.threshold-genders.BPE.en data/$file.u-genders.BPE.en >data/genders2/$file.genders.BPE.en
+    cat data/$file.tc.BPE.en data/$file.tc.BPE.en >data/genders2/$file.tc.BPE.en
+    cat data/$file.tc.BPE.lv data/$file.tc.BPE.lv >data/genders2/$file.tc.BPE.lv
+done
 
 # Sockeye prepare data
 python -m sockeye.prepare_data -s data/genders2/corpus.tc.BPE.en \

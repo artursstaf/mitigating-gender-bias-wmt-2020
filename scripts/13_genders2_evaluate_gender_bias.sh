@@ -25,13 +25,9 @@ cd ../../
 cd mt_gender/src
 export FAST_ALIGN_BASE="../../tools/fast_align"
 
-sh ../scripts/evaluate_language.sh ../../mt_gender/data/aggregates/en.txt lv genders2 ../../data/wino_mt/genders2/lv.genders.txt \
-    >../../evaluation_logs/genders2/gender_bias.txt
-
-sh ../scripts/evaluate_language.sh ../../mt_gender/data/aggregates/en_anti.txt lv genders2 ../../data/wino_mt/genders2/lv.genders.txt \
-    >../../evaluation_logs/genders2/gender_bias_anti.txt
-
-sh ../scripts/evaluate_language.sh ../../mt_gender/data/aggregates/en_pro.txt lv genders2 ../../data/wino_mt/genders2/lv.genders.txt \
-    >../../evaluation_logs/genders2/gender_bias_pro.txt
+for file in "" "_anti" "_pro"; do
+    sh ../scripts/evaluate_language.sh ../../mt_gender/data/aggregates/en$file.txt lv genders2 ../../data/wino_mt/genders2/lv.genders.txt \
+        >../../evaluation_logs/genders2/gender_bias$file.txt
+done
 
 cd ../..
