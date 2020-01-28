@@ -1,0 +1,11 @@
+/.gradle
+/data
+/evaluation_logs
+/models
+/mt_gender
+/.idea
+/tools/fast_align/
+/tools/moses-scripts/
+/tools/morph-analysis/.gradle/
+/tools/morph-analysis/build/
+/tools/morph-analysis/lib/
