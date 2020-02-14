@@ -16,7 +16,7 @@ BASELINE / BLEU 0.211
     Delta g = ABS(f1_male – f1_female) = 49.8 - 21.5  = 28.3%
     Delta s = acc pro – acc anti  = 13%
 
-WITH FACTORS 1 / BLEU True genders 0.228 | Unkown genders 0.213 | Random genders 0.045
+WITH FACTORS 1 / BLEU True genders 0.228 | Unknown genders 0.213 | Random genders 0.045
     BASE
     acc = 25.5%; f1_male = 42.8% (p: 57.0 / r: 34.2); f1_female = 32.0% (p: 78.3 / r: 20.1)
 
@@ -31,7 +31,7 @@ WITH FACTORS 1 / BLEU True genders 0.228 | Unkown genders 0.213 | Random genders
     Delta s = acc pro – acc anti  = 3.9%
 
 
-WITH FACTORS 2 / BLEU True genders 0.235 | Unkown genders 0.218 | Random genders0.111
+WITH FACTORS 2 / BLEU True genders 0.235 | Unknown genders 0.218 | Random genders 0.111
     BASE
     acc = 42.8%; f1_male = 59.1% (p: 58.4 / r: 59.9); f1_female = 45.1% (p: 79.9 / r: 31.4)
 
