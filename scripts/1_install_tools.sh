@@ -6,7 +6,7 @@ mkdir models
 mkdir data
 mkdir tools
 
-CUDA_VERSION=100
+CUDA_VERSION=101
 
 # Install gpu support and tensorboard
 conda install -c anaconda tensorflow-gpu
