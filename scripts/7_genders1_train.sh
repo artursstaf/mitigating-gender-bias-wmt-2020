@@ -39,7 +39,7 @@ python -m sockeye.train -d data/nmt_genders1_prepare_data \
 --batch-size=2048 \
 --checkpoint-interval=2000 \
 --decode-and-evaluate=150 \
---keep-last-params=30 \
+--keep-last-params=35 \
 --decode-and-evaluate-use-cpu \
 --source-factors-combine concat \
 --source-factors-num-embed 8 \

@@ -35,5 +35,7 @@ python -m sockeye.train \
 --decode-and-evaluate -1 \
 --device-ids -2 \
 --max-seq-len 128 \
---checkpoint-frequency 10000 \
---weight-init-xavier-factor-type avg
+--checkpoint-frequency 4000 \
+--weight-init-xavier-factor-type avg \
+--shared-vocab \
+--keep-last-params=35
