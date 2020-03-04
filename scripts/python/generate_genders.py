@@ -12,7 +12,7 @@ def gen_genders(lang, source, output):
     nlp_resources = Path.home() / 'stanfordnlp_resources'
     dirs = [x for x in nlp_resources.iterdir() if x.is_dir()]
     if not any(lang in d.name for d in dirs):
-        stanfordnlp.download(lang)
+        stanfordnlp.download(lang, force=True)
 
     config = {
         'processors': 'tokenize,pos',
@@ -24,6 +24,9 @@ def gen_genders(lang, source, output):
 
     genders = []
     for line in tqdm.tqdm(source):
+        if line.isspace() or line is None or len(line) == 0:
+            continue
+
         doc = nlp(line)
         for tok in doc.sentences[0].words:
             key = 'Gender='
