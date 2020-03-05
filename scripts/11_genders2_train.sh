@@ -4,9 +4,9 @@ FOLDER=genders2
 
 cd ..
 
-python -m sockeye.train --o \
-  models/nmt_$FOLDER \
-  d data/nmt_"$FOLDER"_prepare_data \
+python -m sockeye.train \
+  -o models/nmt_$FOLDER \
+  -d data/nmt_"$FOLDER"_prepare_data \
   -vs data/$FOLDER/newsdev2017.tc.BPE.en \
   -vt data/$FOLDER/newsdev2017.tc.BPE.lv \
   --validation-source-factors data/$FOLDER/newsdev2017.genders.BPE.en \
