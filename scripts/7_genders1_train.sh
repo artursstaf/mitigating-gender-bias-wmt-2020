@@ -5,7 +5,7 @@ DEVICEIDS=-2
 
 cd ..
 
-python -m sockeye.train -\
+python -m sockeye.train \
 --validation-source-factors data/$FOLDER/newsdev2017.genders.BPE.en \
 -o models/nmt_$FOLDER \
 -d data/nmt_"$FOLDER"_prepare_data \

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 FOLDER=ru_base
+DEVICEIDS=-2
 
 cd ../../
 
@@ -36,7 +37,7 @@ python -m sockeye.train \
 --weight-init xavier \
 --weight-init-scale 3.0 \
 --decode-and-evaluate -1 \
---device-ids -2 \
+--device-ids $DEVICEIDS \
 --max-seq-len 128 \
 --checkpoint-frequency 4000 \
 --weight-init-xavier-factor-type avg \
