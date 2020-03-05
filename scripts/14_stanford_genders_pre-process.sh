@@ -55,5 +55,7 @@ done
 python -m sockeye.prepare_data -s data/$FOLDER/corpus.tc.BPE.en \
   -t data/$FOLDER/corpus.tc.BPE.$TARGET_LANG \
   -o data/nmt_"$FOLDER"_prepare_data \
-  --source-factors data/$FOLDER/corpus.genders.BPE.en
-
+  --source-factors data/$FOLDER/corpus.genders.BPE.en \
+  --num-words 50000 \
+  --max-seq-len 128 \
+  --shared-vocab

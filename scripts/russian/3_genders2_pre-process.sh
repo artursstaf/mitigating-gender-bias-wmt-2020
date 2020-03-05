@@ -21,7 +21,7 @@ for file in newstest2014; do
     export CUDA_VISIBLE_DEVICES=${CUDA_DEVICES[(i - 1) % arr_len]}
     python scripts/python/generate_genders.py --lang $TARGET_LANG --source data/$FOLDER/$file.tc."$TARGET_LANG"0"$i" \
       --output data/$FOLDER/$file.genders."$TARGET_LANG"0"$i" &
-      sleep 1
+    sleep 1
   done
   wait
 
@@ -59,5 +59,7 @@ done
 python -m sockeye.prepare_data -s data/$FOLDER/corpus.tc.BPE.en \
   -t data/$FOLDER/corpus.tc.BPE.$TARGET_LANG \
   -o data/nmt_"$FOLDER"_prepare_data \
-  --source-factors data/$FOLDER/corpus.genders.BPE.en
-
+  --source-factors data/$FOLDER/corpus.genders.BPE.en \
+  --num-words 50000 \
+  --max-seq-len 128 \
+  --shared-vocab
