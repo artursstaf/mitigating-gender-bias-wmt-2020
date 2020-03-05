@@ -16,6 +16,7 @@ for file in newsdev2017 corpus; do
     >data/genders2/$file.threshold-genders.BPE.en
 
     # Format data for second experiment
+    sed 's/[MFN]/U/g' <data/$file.genders.BPE.en >data/$file.u-genders.BPE.en
     cat data/genders2/$file.threshold-genders.BPE.en data/$file.u-genders.BPE.en >data/genders2/$file.genders.BPE.en
     cat data/$file.tc.BPE.en data/$file.tc.BPE.en >data/genders2/$file.tc.BPE.en
     cat data/$file.tc.BPE.lv data/$file.tc.BPE.lv >data/genders2/$file.tc.BPE.lv

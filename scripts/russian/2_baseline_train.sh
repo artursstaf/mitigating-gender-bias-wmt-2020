@@ -1,8 +1,8 @@
 #!/bin/bash
 
-FOLDER=base
+FOLDER=ru_base
 
-cd ../
+cd ../../
 
 python -m sockeye.train \
 -o models/nmt_$FOLDER \
