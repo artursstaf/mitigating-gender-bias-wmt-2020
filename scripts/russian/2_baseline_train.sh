@@ -1,15 +1,17 @@
 #!/bin/bash
 
+LANG=ru
 FOLDER=ru_base
 DEVICEIDS=-2
+VALIDATION=newstest2014
 
 cd ../../
 
 python -m sockeye.train \
--o models/nmt_$FOLDER \
--d data/nmt_"$FOLDER"_prepare_data \
--vs data/newsdev2017.tc.BPE.en \
--vt data/newsdev2017.tc.BPE.lv \
+-o models/$LANG/nmt_$FOLDER \
+-d data/$LANG/nmt_"$FOLDER"_prepare_data \
+-vs data/$LANG/$VALIDATION.tc.BPE.en \
+-vt data/$LANG/$VALIDATION.tc.BPE.$LANG \
 --batch-type=word \
 --batch-size=4096 \
 --embed-dropout=0:0 \

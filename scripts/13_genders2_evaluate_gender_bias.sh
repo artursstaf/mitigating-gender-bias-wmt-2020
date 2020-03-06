@@ -5,6 +5,16 @@ cd ..
 # Get WinoMT genders file
 mkdir data/wino_mt/genders2
 
+python scripts/python/wino_mt_genders.py \
+    --wino_mt mt_gender/data/aggregates/en.txt \
+    --tokenized_sentences data/wino_mt/en.txt \
+    >data/wino_mt/en.genders.txt
+
+python scripts/python/genders_bpe.py \
+    --genders data/wino_mt/en.genders.txt \
+    --bpe_sentences data/wino_mt/en.BPE.txt \
+    >data/wino_mt/en.genders.BPE.txt
+
 # Translate gender bias dataset
 python -m sockeye.translate -m models/nmt_genders2 \
     --input data/wino_mt/en.BPE.txt \

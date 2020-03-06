@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FOLDER=stanford_genders
+FOLDER=ru/genders2
 DEVICEIDS=-2
 
 cd ..
