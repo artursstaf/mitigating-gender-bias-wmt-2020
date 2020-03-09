@@ -1,5 +1,4 @@
 #!/bin/bash
-
 cd ..
 
 # Get WinoMT genders file

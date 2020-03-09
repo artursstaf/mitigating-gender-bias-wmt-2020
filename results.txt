@@ -2,45 +2,44 @@ Accuracy > better
 Delta s < better
 Delta g < better
 
-BASELINE / BLEU 0.211
+BASELINE / BLEU 0.218
     BASE
-    acc = 29.9%; f1_male = 49.9% (p: 49.6 / r: 50.2); f1_female = 21.6% (p: 54.3 / r: 13.5)
+    acc = 27.9%; f1_male = 47.2% (p: 48.3 / r: 46.2); f1_female = 21.2% (p: 53.9 / r: 13.2)
 
     PRO
-    acc = 37.0%; f1_male = 60.7% (p: 65.2 / r: 56.7); f1_female = 27.9% (p: 72.5 / r: 17.3)
+    acc = 33.3%; f1_male = 56.1% (p: 62.4 / r: 50.9); f1_female = 25.5% (p: 68.1 / r: 15.7)
 
     ANTI
-    acc = 24.0%; f1_male = 41.5% (p: 44.0 / r: 39.2); f1_female = 14.2% (p: 38.8 / r: 8.7)
+    acc = 23.7%; f1_male = 39.9% (p: 44.7 / r: 36.0); f1_female = 18.1% (p: 44.1 / r: 11.4)
 
-    ACCURACY = 29.9%
-    Delta g = ABS(f1_male – f1_female) = 49.8 - 21.5  = 28.3%
-    Delta s = acc pro – acc anti  = 13%
+    ACCURACY = 27.9%
+    Delta g = ABS(f1_male – f1_female) = 26.0%
+    Delta s = acc pro – acc anti  = 9.6%
 
-WITH FACTORS 1 / BLEU True genders 0.228 | Unknown genders 0.213 | Random genders 0.045
+WITH FACTORS 2 / BLEU True genders 0.239 | Unknown genders 0.217 | Random genders 0.091
     BASE
-    acc = 25.5%; f1_male = 42.8% (p: 57.0 / r: 34.2); f1_female = 32.0% (p: 78.3 / r: 20.1)
+    acc = 40.0%; f1_male = 56.2% (p: 54.0 / r: 58.6); f1_female = 39.4% (p: 76.0 / r: 26.6)
 
     PRO
-    acc = 27.1%; f1_male = 48.2% (p: 67.9 / r: 37.4); f1_female = 28.3% (p: 87.0 / r: 16.9)
+    acc = 45.5%; f1_male = 66.0% (p: 65.3 / r: 66.7); f1_female = 37.7% (p: 85.3 / r: 24.2)
 
     ANTI
-    acc = 23.2%; f1_male = 36.0% (p: 63.1 / r: 25.2); f1_female = 32.9% (p: 72.7 / r: 21.3)
+    acc = 35.8%; f1_male = 48.3% (p: 50.3 / r: 46.5); f1_female = 36.6% (p: 67.8 / r: 25.1)
 
-    ACCURACY = 25.5%
-    Delta g = ABS(f1_male – f1_female) = 42.8-32.0  = 10.8%
-    Delta s = acc pro – acc anti  = 3.9%
+    ACCURACY = 40.0%
+    Delta g = ABS(f1_male – f1_female) = 16.8%
+    Delta s = acc pro – acc anti  = 9.7%
 
-
-WITH FACTORS 2 / BLEU True genders 0.235 | Unknown genders 0.218 | Random genders 0.111
+WITH STANFORD GENDERS / BLEU True genders 0.242 | Unknown genders 0.222 | Random genders 0.088
     BASE
-    acc = 42.8%; f1_male = 59.1% (p: 58.4 / r: 59.9); f1_female = 45.1% (p: 79.9 / r: 31.4)
+    acc = 42.7%; f1_male = 58.4% (p: 55.9 / r: 61.2); f1_female = 42.5% (p: 74.7 / r: 29.7)
 
     PRO
-    acc = 47.7%; f1_male = 68.5% (p: 68.2 / r: 68.9); f1_female = 40.7% (p: 87.5 / r: 26.5)
+    acc = 48.9%; f1_male = 68.2% (p: 66.8 / r: 69.7); f1_female = 42.2% (p: 86.0 / r: 28.0)
 
     ANTI
-    acc = 40.7%; f1_male = 51.4% (p: 57.4 / r: 46.6); f1_female = 47.9% (p: 76.6 / r: 34.8)
+    acc = 38.6%; f1_male = 50.7% (p: 52.9 / r: 48.6); f1_female = 39.9% (p: 65.7 / r: 28.6)
 
-    ACCURACY = 42.8%
-    Delta g = ABS(f1_male – f1_female) = 59.1-45.1  = 14.0%
-    Delta s = acc pro – acc anti  = 7.0%
+    ACCURACY = 42.7%
+    Delta g = ABS(f1_male – f1_female) = 15.9%
+    Delta s = acc pro – acc anti  = 10.3%

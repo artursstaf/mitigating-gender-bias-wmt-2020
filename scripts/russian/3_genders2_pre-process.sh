@@ -1,11 +1,11 @@
 #!/bin/bash
 
-cd ..
+cd ../../
 
 FOLDER=ru/genders2
 TARGET_LANG=ru
-CHUNK_SIZE=9 # Max 9
-CUDA_DEVICES=(2 3 4)
+CHUNK_SIZE=1 # Max 9
+CUDA_DEVICES=(0 1)
 
 mkdir data/$FOLDER
 
@@ -67,8 +67,9 @@ done
 # Sockeye prepare data
 python -m sockeye.prepare_data -s data/$FOLDER/corpus.tc.BPE.en \
   -t data/$FOLDER/corpus.tc.BPE.$TARGET_LANG \
-  -o data/nmt_"$LANG"_prepare_data \
+  -o data/$TARGET_LANG/nmt_"$TARGET_LANG"_genders2_prepare_data \
   --source-factors data/$FOLDER/corpus.genders.BPE.en \
   --num-words 50000 \
   --max-seq-len 128 \
   --shared-vocab
+

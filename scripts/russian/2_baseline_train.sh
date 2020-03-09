@@ -1,15 +1,15 @@
 #!/bin/bash
 
 LANG=ru
-FOLDER=ru_base
-DEVICEIDS=-2
+EXPERIMENT=base
+DEVICEIDS=3,4
 VALIDATION=newstest2014
 
 cd ../../
 
 python -m sockeye.train \
--o models/$LANG/nmt_$FOLDER \
--d data/$LANG/nmt_"$FOLDER"_prepare_data \
+-o models/$LANG/nmt_"$LANG"_"$EXPERIMENT" \
+-d data/$LANG/nmt_"$LANG"_"$EXPERIMENT"_prepare_data \
 -vs data/$LANG/$VALIDATION.tc.BPE.en \
 -vt data/$LANG/$VALIDATION.tc.BPE.$LANG \
 --batch-type=word \
