@@ -1,7 +1,8 @@
 import argparse
+
 import stanfordnlp
-from pathlib import Path
 import tqdm
+from pathlib import Path
 
 
 def gen_genders(lang, source, output):
@@ -46,9 +47,12 @@ def gen_genders(lang, source, output):
 def main():
     parser = argparse.ArgumentParser(
         description="Extract gender per token using StanfordNLP")
-    parser.add_argument("--lang", help="Language used")
-    parser.add_argument("--source", help="Source file")
-    parser.add_argument("--output", help="Output file")
+    parser.add_argument("--lang", help="Language used", required=True)
+    parser.add_argument("--source", help="Source file", required=True)
+    parser.add_argument("--output", help="Output file", required=True)
+    parser.add_argument("--chunks", metavar="N", type=int, help="Process in N parallel chunks")
+    parser.add_argument("--cuda-devices", type=int, nargs="*", default=[0],
+                        help="Distribute chunks across provided CUDA devices")
 
     args = parser.parse_args()
     gen_genders(args.lang, args.source, args.output)
