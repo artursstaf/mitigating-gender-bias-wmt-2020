@@ -1,7 +1,13 @@
 import gzip
+import itertools
 
 import math
 import regex
+
+
+def grouper(n, iterable, fillvalue=None):
+    args = [iter(iterable)] * n
+    return itertools.zip_longest(*args, fillvalue=fillvalue)
 
 
 def concatenate(output_file, *input_files):

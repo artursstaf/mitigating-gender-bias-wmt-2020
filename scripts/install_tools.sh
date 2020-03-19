@@ -21,9 +21,7 @@ rm requirements.gpu-cu${CUDA_VERSION}.txt
 # Install pre-processing tools
 pip install subword-nmt
 git clone git@github.com:marian-nmt/moses-scripts.git ./tools/moses-scripts
-cd models
-curl http://data.statmt.org/wmt17/translation-task/preprocessed/lv-en/true.tgz | tar xvzf -
-cd ..
+git clone git@gist.github.com:9128457.git ./tools/tmx2txt
 
 # Install fast-align
 git clone git@github.com:clab/fast_align.git ./tools/fast_align
@@ -35,4 +33,9 @@ cd ../../..
 
 # Download mt_gender (gender bias evaluation) repository
 git clone git@github.com:artursstaf/mt_gender.git
-pip install docopt tqdm spacy pymorphy2 argparse
+(
+  cd mt_gender
+  git pull
+  git checkout genders-file
+)
+pip install docopt tqdm spacy pymorphy2 argparse stanza

@@ -1,6 +1,6 @@
 import argparse
 
-import stanfordnlp
+import stanza
 import tqdm
 from pathlib import Path
 
@@ -10,18 +10,27 @@ def gen_genders(lang, source, output):
         source = f.read().strip().split('\n')
 
     # download models if necessary
-    nlp_resources = Path.home() / 'stanfordnlp_resources'
+    nlp_resources = Path.home() / 'stanza_resources'
     dirs = [x for x in nlp_resources.iterdir() if x.is_dir()]
+
+    default_package = {
+        'lt': 'alksnis',
+        'lv': 'lvtb',
+        'fr': 'gsd',
+        'ru': 'SynTagRus',
+    }
+
     if not any(lang in d.name for d in dirs):
-        stanfordnlp.download(lang, force=True)
+        stanza.download(lang, package=default_package[lang], dir=str(nlp_resources))
 
     config = {
         'processors': 'tokenize,pos',
         'tokenize_pretokenized': True,
-        'lang': lang
+        'lang': lang,
+        'package': default_package[lang]
     }
 
-    nlp = stanfordnlp.Pipeline(**config)
+    nlp = stanza.Pipeline(**config)
 
     genders = []
     for line in tqdm.tqdm(source):
@@ -31,10 +40,10 @@ def gen_genders(lang, source, output):
         doc = nlp(line)
         for tok in doc.sentences[0].words:
             key = 'Gender='
-            offset = tok.feats.find(key)
-            if offset == -1:
+            if tok.feats is None or tok.feats.find(key) == -1:
                 gender = 'U '
             else:
+                offset = tok.feats.find(key)
                 gender = tok.feats[offset + len(key): offset + len(key) + 1] + ' '
             genders.append(gender)
         genders.append('\n')
