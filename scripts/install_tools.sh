@@ -12,7 +12,6 @@ CUDA_VERSION=101
 conda install -c anaconda tensorflow-gpu
 pip install mxboard tensorboard
 
-
 # Install sockeye with CUDA 10.0
 wget https://raw.githubusercontent.com/awslabs/sockeye/master/requirements/requirements.gpu-cu${CUDA_VERSION}.txt
 pip install sockeye --no-deps -r requirements.gpu-cu${CUDA_VERSION}.txt
