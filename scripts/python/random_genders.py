@@ -8,8 +8,9 @@ def generate_random(genders):
 
     new_lines = []
     for line in genders:
+        line = line.strip()
         new_line = []
-        for _ in line.split():
+        for _ in line.strip().split(' '):
             new_line.append(random.choice(['U', 'F', 'M']))
         new_lines.append(' '.join(new_line))
 

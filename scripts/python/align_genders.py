@@ -5,14 +5,14 @@ import tqdm
 
 
 def align_genders(source_genders, target_sentences, alignments):
-    source_genders = open(source_genders, 'r', encoding='utf-8-sig')
-    alignments = open(alignments, 'r', encoding='utf-8-sig')
-    target_sentences = open(target_sentences, 'r', encoding='utf-8-sig')
+    source_genders = open(source_genders, 'r')
+    alignments = open(alignments, 'r')
+    target_sentences = open(target_sentences, 'r')
 
     for source, alignment, target in tqdm.tqdm(zip(source_genders, alignments, target_sentences)):
         alignment = alignment.strip()
         source = source.strip().split()
-        target = list(filter(lambda x: x != '\ufeff', target.strip().split()))
+        target = target.strip().split()
 
         reversed_ind = {}
         # Reverse alignment indices

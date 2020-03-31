@@ -23,8 +23,8 @@ mkdir -p data/"$LANG"/"$EXPERIMENT"
     ln -sf ../"$file".tc.en "$file".tc.en
     ln -sf ../"$file".tc.BPE.en "$file".tc.BPE.en
 
-    rm "$file.genders.$LANG"?*
-    rm "$file.tc.$LANG"?*
+    rm -f "$file.genders.$LANG"?*
+    rm -f "$file.tc.$LANG"?*
 
     # Split file and process in parallel for efficiency reasons
     split "$file".tc."$LANG" "$file".tc."$LANG" --numeric-suffixes=1 -n l/"$CHUNK_SIZE"
@@ -50,7 +50,7 @@ mkdir -p data/"$LANG"/"$EXPERIMENT"
 
     if [[ "$file" == "$CORPUS" ]]; then
       #train alignment model
-      ../../../tools/fast_align/build/fast_align -d -o -v \
+      "$PROJECT_ROOT"/tools/fast_align/build/fast_align -d -o -v \
         -p $alignments_folder/"$file"."$LANG"-en.align.model \
         -i $alignments_folder/"$file"."$LANG"-en.txt \
         >$alignments_folder/"$file"."$LANG"-en.align \
@@ -62,7 +62,7 @@ mkdir -p data/"$LANG"/"$EXPERIMENT"
       T=$(grep -o -P "(?<=final tension: )[0-9]?\.[0-9]+" $alignments_folder/"$CORPUS"."$LANG"-en.align.debug | tail -1)
       echo "Final tension $T"
 
-      ../../../tools/fast_align/build/fast_align -d -o -v \
+      "$PROJECT_ROOT"/tools/fast_align/build/fast_align -d -o -v \
         -m "$m" -T "$T" \
         -f $alignments_folder/"$CORPUS"."$LANG"-en.align.model \
         -i $alignments_folder/"$file"."$LANG"-en.txt |
@@ -100,7 +100,7 @@ mkdir -p data/"$LANG"/"$EXPERIMENT"
   done
 )
 
-# Sockeye prepare data
+Sockeye prepare data
 (
   cd data/"$LANG"
   python -m sockeye.prepare_data -s "$EXPERIMENT"/"$CORPUS".final.en \

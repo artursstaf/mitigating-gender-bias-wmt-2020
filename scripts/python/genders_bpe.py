@@ -17,14 +17,17 @@ def align_bpe(genders, sentences):
 
     aligned_genders = []
     for sent, gend in tqdm.tqdm(zip(sentences, genders)):
+        sent = sent.strip()
+        gend = gend.strip()
         aligned_sentence_genders = []
-        gend_it = iter(gend.split(' '))
-        cur_gender = next(gend_it)
+        gend_it = iter(enumerate(gend.split(' ')))
+        i, cur_gender = next(gend_it)
 
-        for word in sent.strip().split(' '):
+        for word in sent.split(' '):
+            assert cur_gender is not None
             aligned_sentence_genders.append(cur_gender)
             if not word.endswith("@@"):
-                cur_gender = next(gend_it, None)
+                i, cur_gender = next(gend_it, (float('inf'), None))
         aligned_genders.append(aligned_sentence_genders)
 
     print('\n'.join([' '.join(line) for line in aligned_genders]))
