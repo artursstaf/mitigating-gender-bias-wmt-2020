@@ -26,45 +26,52 @@ mkdir -p data/"$LANG"/"$EXPERIMENT"
     rm -f "$file.genders.$LANG"?*
     rm -f "$file.tc.$LANG"?*
 
-    # Split file and process in parallel for efficiency reasons
-    split "$file".tc."$LANG" "$file".tc."$LANG" --numeric-suffixes=1 -n l/"$CHUNK_SIZE"
+    if [[ $file != "corpus" ]]; then
 
-    for i in $(seq 1 "$CHUNK_SIZE"); do
-      "$PROJECT_ROOT"/tools/morph-analysis/gradlew run --args="$file.tc.lv0$i $file.genders.lv0$i" &
-      sleep 1
-    done
-    wait
+      # Split file and process in parallel for efficiency reasons
+      split "$file".tc."$LANG" "$file".tc."$LANG" --numeric-suffixes=1 -n l/"$CHUNK_SIZE"
 
-    # Combine chunks back
-    cat "$file.genders.$LANG"?* >"$file".genders."$LANG"
-    rm "$file.genders.$LANG"?*
-    rm "$file.tc.$LANG"?*
+      (
+        cd "$PROJECT_ROOT"/tools/morph-analysis/
+        for i in $(seq 1 "$CHUNK_SIZE"); do
+        ./gradlew run --args="../../data/$LANG/$EXPERIMENT/$file.tc.lv0$i ../../data/$LANG/$EXPERIMENT/$file.genders.lv0$i" &
+        sleep 1
+      done
+      wait
+      )
 
-    # Generate word alignments
-    alignments_folder=../../alignments
-    paste -d "|" "$file".tc."$LANG" "$file".tc.en | sed 's/|/ ||| /g' >$alignments_folder/"$file"."$LANG"-en.txt
+      # Combine chunks back
+      cat "$file.genders.$LANG"?* >"$file".genders."$LANG"
+      rm "$file.genders.$LANG"?*
+      rm "$file.tc.$LANG"?*
 
-    if [[ "$file" == "$CORPUS" ]]; then
-      #train alignment model
-      ../../../tools/fast_align/build/fast_align -d -o -v \
-        -p $alignments_folder/"$file"."$LANG"-en.align.model \
-        -i $alignments_folder/"$file"."$LANG"-en.txt \
-        >$alignments_folder/"$file"."$LANG"-en.align \
-        2>$alignments_folder/"$file"."$LANG"-en.align.debug
-    else
-      # Extract hyper parameters and apply model to validation set
-      m=$(grep -o -P "(?<=source length \* )[0-9]?\.[0-9]+" $alignments_folder/"$CORPUS"."$LANG"-en.align.debug)
-      echo "Source-target length ratio $m"
-      T=$(grep -o -P "(?<=final tension: )[0-9]?\.[0-9]+" $alignments_folder/"$CORPUS"."$LANG"-en.align.debug | tail -1)
-      echo "Final tension $T"
+      # Generate word alignments
+      alignments_folder=../../alignments
+      paste -d "|" "$file".tc."$LANG" "$file".tc.en | sed 's/|/ ||| /g' >$alignments_folder/"$file"."$LANG"-en.txt
 
-      ../../../tools/fast_align/build/fast_align -d -o -v \
-        -m "$m" -T "$T" \
-        -f $alignments_folder/"$CORPUS"."$LANG"-en.align.model \
-        -i $alignments_folder/"$file"."$LANG"-en.txt |
-        awk -F ' \\|\\|\\| ' '{print $3}' >$alignments_folder/"$file"."$LANG"-en.align
+      if [[ "$file" == "$CORPUS" ]]; then
+        #train alignment model
+        ../../../tools/fast_align/build/fast_align -d -o -v \
+          -p $alignments_folder/"$file"."$LANG"-en.align.model \
+          -i $alignments_folder/"$file"."$LANG"-en.txt \
+          >$alignments_folder/"$file"."$LANG"-en.align \
+          2>$alignments_folder/"$file"."$LANG"-en.align.debug
+      else
+        # Extract hyper parameters and apply model to validation set
+        m=$(grep -o -P "(?<=source length \* )[0-9]?\.[0-9]+" $alignments_folder/"$CORPUS"."$LANG"-en.align.debug)
+        echo "Source-target length ratio $m"
+        T=$(grep -o -P "(?<=final tension: )[0-9]?\.[0-9]+" $alignments_folder/"$CORPUS"."$LANG"-en.align.debug | tail -1)
+        echo "Final tension $T"
+
+        ../../../tools/fast_align/build/fast_align -d -o -v \
+          -m "$m" -T "$T" \
+          -f $alignments_folder/"$CORPUS"."$LANG"-en.align.model \
+          -i $alignments_folder/"$file"."$LANG"-en.txt |
+          awk -F ' \\|\\|\\| ' '{print $3}' >$alignments_folder/"$file"."$LANG"-en.align
+      fi
+
     fi
-
+    alignments_folder=../../alignments
     # Get EN genders by aligning $LANG genders to EN corpus
     python "$PYTHON_SCR"/align_genders.py \
       --target "$file".tc.en \

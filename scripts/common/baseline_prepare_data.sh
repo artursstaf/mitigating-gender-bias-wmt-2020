@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+  set -eu
 DIR=$(dirname "$(readlink -f "$0")")
 PROJECT_ROOT=$(dirname "$(dirname "$DIR")")
 cd "$PROJECT_ROOT"/data

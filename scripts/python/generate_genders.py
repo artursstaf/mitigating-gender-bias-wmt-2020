@@ -1,9 +1,16 @@
 import argparse
+from pathlib import Path
 
 import stanza
 import tqdm
-from pathlib import Path
 
+default_package = {
+    'lt': 'alksnis',
+    'lv': 'lvtb',
+    'fr': 'gsd',
+    'ru': 'SynTagRus',
+    'de': 'hdt'
+}
 
 def gen_genders(lang, source, output):
     with open(source, 'r') as f:
@@ -12,13 +19,6 @@ def gen_genders(lang, source, output):
     # download models if necessary
     nlp_resources = Path.home() / 'stanza_resources'
     dirs = [x for x in nlp_resources.iterdir() if x.is_dir()]
-
-    default_package = {
-        'lt': 'alksnis',
-        'lv': 'lvtb',
-        'fr': 'gsd',
-        'ru': 'SynTagRus',
-    }
 
     if not any(lang in d.name for d in dirs):
         stanza.download(lang, package=default_package[lang], dir=str(nlp_resources))
@@ -59,9 +59,6 @@ def main():
     parser.add_argument("--lang", help="Language used", required=True)
     parser.add_argument("--source", help="Source file", required=True)
     parser.add_argument("--output", help="Output file", required=True)
-    parser.add_argument("--chunks", metavar="N", type=int, help="Process in N parallel chunks")
-    parser.add_argument("--cuda-devices", type=int, nargs="*", default=[0],
-                        help="Distribute chunks across provided CUDA devices")
 
     args = parser.parse_args()
     gen_genders(args.lang, args.source, args.output)

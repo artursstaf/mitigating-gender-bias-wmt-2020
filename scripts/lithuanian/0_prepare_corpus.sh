@@ -1,9 +1,11 @@
 #!/bin/bash
 set -eu
-DIR=$(dirname "$(readlink -f ".")")
+DIR=$(dirname "$(readlink -f "$0")")
 PROJECT_ROOT=$(dirname "$(dirname "$DIR")")
 PYTHON_SCRIPTS=$PROJECT_ROOT/scripts/python
 TOOLS=$PROJECT_ROOT/tools
+
+echo "$PYTHON_SCRIPTS"
 
 LANG=lt
 
@@ -57,5 +59,5 @@ for lang in en lt; do
 
 done
 
-rm bitext.* *.tgz EESC* *bicleaner* europarl* rapid2016* wikititles* **/*.sgm *.tok.* *.clean.*
-rmdir dev
+#rm bitext.* *.tgz EESC* *bicleaner* europarl* rapid2016* wikititles* **/*.sgm *.tok.* *.clean.*
+#rmdir dev

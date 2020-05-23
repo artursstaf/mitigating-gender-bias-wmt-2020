@@ -100,7 +100,7 @@ mkdir -p data/"$LANG"/"$EXPERIMENT"
   done
 )
 
-Sockeye prepare data
+#Sockeye prepare data
 (
   cd data/"$LANG"
   python -m sockeye.prepare_data -s "$EXPERIMENT"/"$CORPUS".final.en \
