@@ -1,22 +1,33 @@
 import argparse
+import os
+import sys
+
+import tqdm
 
 
 def align_bpe(genders, sentences):
+    sys.stderr.write(f'currently in {os.getcwd()} \n')
+    sys.stderr.write(f'genders file: {genders} \n')
+    sys.stderr.write(f'sentences file: {sentences} \n')
+
     with open(genders, 'r') as f:
         genders = f.read().strip().split('\n')
     with open(sentences, 'r') as f:
         sentences = f.read().strip().split('\n')
 
     aligned_genders = []
-    for sent, gend in zip(sentences, genders):
+    for sent, gend in tqdm.tqdm(zip(sentences, genders)):
+        sent = sent.strip()
+        gend = gend.strip()
         aligned_sentence_genders = []
-        gend_it = iter(gend.split(' '))
-        cur_gender = next(gend_it)
+        gend_it = iter(enumerate(gend.split(' ')))
+        i, cur_gender = next(gend_it)
 
         for word in sent.split(' '):
+            assert cur_gender is not None
             aligned_sentence_genders.append(cur_gender)
             if not word.endswith("@@"):
-                cur_gender = next(gend_it, None)
+                i, cur_gender = next(gend_it, (float('inf'), None))
         aligned_genders.append(aligned_sentence_genders)
 
     print('\n'.join([' '.join(line) for line in aligned_genders]))

@@ -1,18 +1,18 @@
 import argparse
+import sys
+
+import tqdm
 
 
 def align_genders(source_genders, target_sentences, alignments):
-    with open(source_genders, 'r') as f:
-        source_genders = f.read().strip().split('\n')
-    with open(alignments, 'r') as f:
-        alignments = f.read().strip().split('\n')
-    with open(target_sentences, 'r') as f:
-        target_sentences = f.read().strip().split('\n')
+    source_genders = open(source_genders, 'r')
+    alignments = open(alignments, 'r')
+    target_sentences = open(target_sentences, 'r')
 
-    aligned_genders = []
-    for source, alignment, target in zip(source_genders, alignments, target_sentences):
-        source = source.split()
-        target = target.split()
+    for source, alignment, target in tqdm.tqdm(zip(source_genders, alignments, target_sentences)):
+        alignment = alignment.strip()
+        source = source.strip().split()
+        target = target.strip().split()
 
         reversed_ind = {}
         # Reverse alignment indices
@@ -25,13 +25,20 @@ def align_genders(source_genders, target_sentences, alignments):
         genders = []
         for i, word in enumerate(target):
             if i in reversed_ind:
-                genders.append(source[reversed_ind[i]])
+                try:
+                    genders.append(source[reversed_ind[i]])
+                except Exception as e:
+                    sys.stderr.write(str(e) + '\n')
+                    sys.stderr.write(f'Source:{source}\nTarget:{target}')
+                    raise e
             else:
                 genders.append('U')
 
-        aligned_genders.append(genders)
+        print(' '.join(genders))
 
-    print('\n'.join([' '.join(line) for line in aligned_genders]))
+    source_genders.close()
+    alignments.close()
+    target_sentences.close()
 
 
 def main():
