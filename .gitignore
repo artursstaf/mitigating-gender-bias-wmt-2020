@@ -9,4 +9,5 @@
 /tools/morph-analysis/lib/
 /data/*
 !/data/dev_translations
+!/data/wino_mt
 
