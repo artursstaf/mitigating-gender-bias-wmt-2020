@@ -1,6 +1,4 @@
 /.gradle
-/data
-/evaluation_logs
 /models
 /mt_gender
 /.idea
@@ -9,3 +7,6 @@
 /tools/morph-analysis/.gradle/
 /tools/morph-analysis/build/
 /tools/morph-analysis/lib/
+/data/*
+!/data/dev_translations
+
