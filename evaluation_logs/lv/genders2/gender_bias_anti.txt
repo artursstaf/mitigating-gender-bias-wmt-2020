@@ -1,0 +1,19 @@
+!!! ../translations/lv_genders2/en-lv.txt
+Not translating since translation file exists: ../translations/lv_genders2/en-lv.txt
+#total = 1584; 
+ acc = 32.8%; f1_male = 45.0% (p: 48.6 / r: 41.9); f1_female = 34.3% (p: 63.7 / r: 23.5)
+Gold distribution: male: 50.1% (794), female: 49.87% (790), neutral: 0.0% (0)
+Predictions: male: 43.2%, female: 18.4%, neutral: 0.0%
+male professions = ['a housekeeper']
+female professions = ['an assistant']
+neutral professions = []
+ambiguous professions = ['developer', 'designer', 'mechanic', 'clerk', 'mover', 'housekeeper', 'analyst', 'assistant', 'chief', 'salesperson', 'librarian', 'lawyer', 'hairdresser', 'cook', 'teacher', 'physician', 'baker', 'farmer', 'ceo', 'nurse', 'manager', 'driver', 'auditor', 'receptionist', 'guard', 'editor', 'secretary', 'cleaner', 'laborer', 'cashier', 'tailor', 'writer', 'construction worker', 'counselor', 'carpenter', 'janitor', 'accountant', 'supervisor', 'attendant', 'sheriff']
+defaultdict(<function evaluate_bias.<locals>.<lambda> at 0x7f778b6f8440>,
+            {<GENDER.male: 0>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7f778b67d830>,
+                                           {<GENDER.male: 0>: 333,
+                                            <GENDER.female: 1>: 106,
+                                            <GENDER.unknown: 3>: 355}),
+             <GENDER.female: 1>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7f778b67d320>,
+                                             {<GENDER.male: 0>: 352,
+                                              <GENDER.female: 1>: 186,
+                                              <GENDER.unknown: 3>: 252})})
