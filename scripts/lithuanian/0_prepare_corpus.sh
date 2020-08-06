@@ -34,7 +34,7 @@ python "$PYTHON_SCRIPTS"/tsv2txt.py wikititles-v1.lt-en.tsv lt en
 python "$PYTHON_SCRIPTS"/tsv2txt.py europarl-v9.lt-en.tsv lt en
 
 for lang in en lt; do
-  cat europarl-v9.lt-en.$lang wikititles.$lang bitext.$lang |
+  cat europarl-v9.lt-en.$lang wikititles.$lang bitext.$lang commoncrawl.de-en.$lang |
     "$TOOLS"/moses-scripts/scripts/tokenizer/normalize-punctuation.perl -l $lang |
     "$TOOLS"/moses-scripts/scripts/tokenizer/tokenizer.perl -a -l $lang >corpus.tok.$lang
 done

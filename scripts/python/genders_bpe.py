@@ -10,27 +10,25 @@ def align_bpe(genders, sentences):
     sys.stderr.write(f'genders file: {genders} \n')
     sys.stderr.write(f'sentences file: {sentences} \n')
 
-    with open(genders, 'r') as f:
-        genders = f.read().strip().split('\n')
-    with open(sentences, 'r') as f:
-        sentences = f.read().strip().split('\n')
+    with open(genders, 'r') as genders, open(sentences, 'r') as sentences:
+        aligned_genders = []
+        for sent, gend in tqdm.tqdm(zip(sentences, genders)):
+            if sent.isspace() or gend.isspace():
+                continue
+            sent = sent.strip()
+            gend = gend.strip()
+            aligned_sentence_genders = []
+            gend_it = iter(enumerate(gend.split(' ')))
+            i, cur_gender = next(gend_it)
 
-    aligned_genders = []
-    for sent, gend in tqdm.tqdm(zip(sentences, genders)):
-        sent = sent.strip()
-        gend = gend.strip()
-        aligned_sentence_genders = []
-        gend_it = iter(enumerate(gend.split(' ')))
-        i, cur_gender = next(gend_it)
+            for word in sent.split(' '):
+                assert cur_gender is not None
+                aligned_sentence_genders.append(cur_gender)
+                if not word.endswith("@@"):
+                    i, cur_gender = next(gend_it, (float('inf'), None))
+            aligned_genders.append(aligned_sentence_genders)
 
-        for word in sent.split(' '):
-            assert cur_gender is not None
-            aligned_sentence_genders.append(cur_gender)
-            if not word.endswith("@@"):
-                i, cur_gender = next(gend_it, (float('inf'), None))
-        aligned_genders.append(aligned_sentence_genders)
-
-    print('\n'.join([' '.join(line) for line in aligned_genders]))
+        print('\n'.join([' '.join(line) for line in aligned_genders]))
 
 
 def main():
