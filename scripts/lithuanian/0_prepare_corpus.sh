@@ -59,5 +59,5 @@ for lang in en lt; do
 
 done
 
-#rm bitext.* *.tgz EESC* *bicleaner* europarl* rapid2016* wikititles* **/*.sgm *.tok.* *.clean.*
-#rmdir dev
+rm bitext.* *.tgz EESC* *bicleaner* europarl* rapid2016* wikititles* **/*.sgm *.tok.* *.clean.*
+rmdir dev

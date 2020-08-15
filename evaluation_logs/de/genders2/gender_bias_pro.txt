@@ -1,19 +1,19 @@
 !!! ../translations/de_genders2/en-de.txt
 Not translating since translation file exists: ../translations/de_genders2/en-de.txt
 #total = 1584; 
- acc = 94.9%; f1_male = 95.0% (p: 94.7 / r: 95.3); f1_female = 95.4% (p: 96.3 / r: 94.6)
+ acc = 92.1%; f1_male = 92.5% (p: 89.9 / r: 95.2); f1_female = 92.3% (p: 95.9 / r: 89.0)
 Gold distribution: male: 50.0% (792), female: 50.0% (792), neutral: 0.0% (0)
-Predictions: male: 50.3%, female: 49.1%, neutral: 0.6%
-male professions = ['analyst', 'manager', 'construction worker', 'janitor', ' physician']
-female professions = ['designer', 'assistant', 'librarian', 'hairdresser', 'teacher', 'nurse', 'secretary', 'cleaner', 'tailor', 'writer', 'counselor', 'accountant', 'a housekeeper']
+Predictions: male: 53.0%, female: 46.4%, neutral: 0.6%
+male professions = ['manager', 'construction worker', 'janitor', ' physician']
+female professions = ['teacher', 'nurse', 'secretary', 'accountant', 'a housekeeper']
 neutral professions = []
-ambiguous professions = ['developer', 'mechanic', 'clerk', 'mover', 'housekeeper', 'chief', 'salesperson', 'lawyer', 'cook', 'physician', 'baker', 'farmer', 'ceo', 'driver', 'auditor', 'receptionist', 'guard', 'editor', 'laborer', 'cashier', 'carpenter', 'supervisor', 'attendant', 'sheriff']
-defaultdict(<function evaluate_bias.<locals>.<lambda> at 0x7f7041bb8170>,
-            {<GENDER.male: 0>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7f7041bba290>,
-                                           {<GENDER.neutral: 2>: 8,
-                                            <GENDER.male: 0>: 755,
-                                            <GENDER.female: 1>: 29}),
-             <GENDER.female: 1>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7f704253e7a0>,
-                                             {<GENDER.neutral: 2>: 1,
-                                              <GENDER.male: 0>: 42,
-                                              <GENDER.female: 1>: 749})})
+ambiguous professions = ['developer', 'designer', 'mechanic', 'clerk', 'mover', 'housekeeper', 'analyst', 'assistant', 'chief', 'salesperson', 'librarian', 'lawyer', 'hairdresser', 'cook', 'physician', 'baker', 'farmer', 'ceo', 'driver', 'auditor', 'receptionist', 'guard', 'editor', 'cleaner', 'laborer', 'cashier', 'tailor', 'writer', 'counselor', 'carpenter', 'supervisor', 'attendant', 'sheriff']
+defaultdict(<function evaluate_bias.<locals>.<lambda> at 0x7fda253b64d0>,
+            {<GENDER.female: 1>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7fda25d3c950>,
+                                             {<GENDER.female: 1>: 705,
+                                              <GENDER.male: 0>: 85,
+                                              <GENDER.neutral: 2>: 2}),
+             <GENDER.male: 0>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7fda253b69e0>,
+                                           {<GENDER.female: 1>: 30,
+                                            <GENDER.male: 0>: 754,
+                                            <GENDER.neutral: 2>: 8})})

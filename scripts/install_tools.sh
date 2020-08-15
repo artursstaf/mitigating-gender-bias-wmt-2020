@@ -30,7 +30,7 @@ cmake ..
 make
 cd ../../..
 
-# Download mt_gender (gender bias evaluation) repository
+# Download forked mt_gender (gender bias evaluation) repository
 git clone git@github.com:artursstaf/mt_gender.git
 (
   cd mt_gender

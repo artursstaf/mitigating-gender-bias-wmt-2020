@@ -1,19 +1,19 @@
 !!! ../translations/lt_genders2/en-lt.txt
 Not translating since translation file exists: ../translations/lt_genders2/en-lt.txt
 #total = 1584; 
- acc = 53.0%; f1_male = 63.2% (p: 60.9 / r: 65.7); f1_female = 56.7% (p: 96.6 / r: 40.1)
+ acc = 48.6%; f1_male = 60.6% (p: 57.8 / r: 63.7); f1_female = 49.0% (p: 92.0 / r: 33.4)
 Gold distribution: male: 50.1% (794), female: 49.87% (790), neutral: 0.0% (0)
-Predictions: male: 54.1%, female: 20.7%, neutral: 0.0%
-male professions = ['an assistant', 'a housekeeper']
+Predictions: male: 55.3%, female: 18.1%, neutral: 0.0%
+male professions = ['a housekeeper']
 female professions = []
 neutral professions = []
 ambiguous professions = ['developer', 'designer', 'mechanic', 'clerk', 'mover', 'housekeeper', 'analyst', 'assistant', 'chief', 'salesperson', 'librarian', 'lawyer', 'hairdresser', 'cook', 'teacher', 'physician', 'baker', 'farmer', 'ceo', 'nurse', 'manager', 'driver', 'auditor', 'receptionist', 'guard', 'editor', 'secretary', 'cleaner', 'laborer', 'cashier', 'tailor', 'writer', 'construction worker', 'counselor', 'carpenter', 'janitor', 'accountant', 'supervisor', 'attendant', 'sheriff']
-defaultdict(<function evaluate_bias.<locals>.<lambda> at 0x7ff4d59b6c20>,
-            {<GENDER.male: 0>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7ff4d6249cb0>,
-                                           {<GENDER.unknown: 3>: 261,
-                                            <GENDER.male: 0>: 522,
-                                            <GENDER.female: 1>: 11}),
-             <GENDER.female: 1>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7ff4d62499e0>,
-                                             {<GENDER.unknown: 3>: 138,
-                                              <GENDER.male: 0>: 335,
-                                              <GENDER.female: 1>: 317})})
+defaultdict(<function evaluate_bias.<locals>.<lambda> at 0x7fa63c9010e0>,
+            {<GENDER.male: 0>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7fa63d219710>,
+                                           {<GENDER.unknown: 3>: 265,
+                                            <GENDER.male: 0>: 506,
+                                            <GENDER.female: 1>: 23}),
+             <GENDER.female: 1>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7fa63c904200>,
+                                             {<GENDER.unknown: 3>: 156,
+                                              <GENDER.male: 0>: 370,
+                                              <GENDER.female: 1>: 264})})

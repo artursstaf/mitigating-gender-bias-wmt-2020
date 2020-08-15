@@ -39,7 +39,7 @@ python -m sockeye.translate -m models/"$LANG"/nmt_"$LANG"_"$EXPERIMENT" \
 
 # Combine into format that is expected by mt_gender scripts
 paste -d "|" data/wino_mt/en.raw.txt data/wino_mt/"$LANG"/"$EXPERIMENT"/"$LANG".txt | sed 's/|/ ||| /g' >data/wino_mt/"$LANG"/"$EXPERIMENT"/en-"$LANG".txt
-mkdir mt_gender/translations/"$LANG"_"$EXPERIMENT"
+mkdir -p mt_gender/translations/"$LANG"_"$EXPERIMENT"
 cp data/wino_mt/"$LANG"/"$EXPERIMENT"/en-"$LANG".txt mt_gender/translations/"$LANG"_"$EXPERIMENT"/en-"$LANG".txt
 
 # Get translated genders
