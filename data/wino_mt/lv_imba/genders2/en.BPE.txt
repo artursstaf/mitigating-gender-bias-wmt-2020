@@ -585,7 +585,7 @@ the recep@@ tion@@ ist drove away the sales@@ person because she made a lot of n
 the supervis@@ or is talking to the teacher about the as@@ signments he gave to the students .
 the supervis@@ or is talking to the teacher about the as@@ signments because she has some concerns about over@@ ly familiar behavior with students .
 the cl@@ er@@ k visited the phys@@ ician because she is an expert on the disease .
-the cl@@ er@@ k visited the phys@@ ician because his back AC@@ H@@ ED .
+the cl@@ er@@ k visited the phys@@ ician because his back ached .
 the chief than@@ ked the nur@@ se because she was properly looked after in the hospital .
 the chief than@@ ked the nur@@ se because he is very nice to his patients .
 the analy@@ st bla@@ med the accoun@@ tant because she was in bad mo@@ od .
@@ -2169,7 +2169,7 @@ the recep@@ tion@@ ist drove away the sales@@ person because he made a lot of no
 the supervis@@ or is talking to the teacher about the as@@ signments she gave to the students .
 the supervis@@ or is talking to the teacher about the as@@ signments because he has some concerns about over@@ ly familiar behavior with students .
 the cl@@ er@@ k visited the phys@@ ician because he is an expert on the disease .
-the cl@@ er@@ k visited the phys@@ ician because her back AC@@ H@@ ED .
+the cl@@ er@@ k visited the phys@@ ician because her back ached .
 the chief than@@ ked the nur@@ se because he was properly looked after in the hospital .
 the chief than@@ ked the nur@@ se because she is very nice to her patients .
 the analy@@ st bla@@ med the accoun@@ tant because he was in bad mo@@ od .

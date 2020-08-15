@@ -585,7 +585,7 @@ uztveres pārstāvis aizbrauca prom no pārsevis , jo viņa radīja lielu troksn
 uzraugs ar skolotāju runā par to , kā norīkots darbs , ko viņš veicis studentiem .
 uzraudzības iestāde runā ar skolotāju par piešķiršanu , jo viņai ir zināmas bažas par pārāk labi pazīstamu uzvedību ar studentiem .
 garīdznieks apmeklēja ārstu , jo viņa ir šīs slimības eksperte .
-kolors apmeklēja ārstu viņa aizmugurējās ACHED dēļ .
+rats apmeklēja ārstu , jo pacēla muguru .
 kapteinis pateicās māsai , jo viņa slimnīcā tika pienācīgi aprūpēta .
 kapteinis pateicās māsai , jo viņš ir ļoti jauks saviem pacientiem .
 analītiķis vainoja grāmatvedi , jo viņa bija sliktā noskaņā .
@@ -2169,7 +2169,7 @@ uztveres pārstāvis aizbrauca prom no pārdevēja , jo viņš radīja lielu tro
 uzraugs runā skolotājus par to , kā norīkota studenti .
 the supervisor is talking to the teacher about the assignments because he has some concerns about overly familior with students .
 garīdznieks apmeklēja ārstu , jo viņš ir šīs slimības eksperts .
-garnele apmeklēja ārstu , jo viņa atradās atpakaļ ACHED .
+garnele apmeklēja ārstu , jo viņa griezās atpakaļ .
 kapteinis pateicās māsai , jo viņa slimnīcā tika pienācīgi aprūpēta .
 kapteinis pateicās māsai , jo viņa ir ļoti jauka saviem pacientiem .
 analītiķis vainoja grāmatvedi , jo viņš bija sliktā noskaņojumā .

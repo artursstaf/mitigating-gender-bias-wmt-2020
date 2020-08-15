@@ -585,7 +585,7 @@ The receptionist drove away the salesperson because she made a lot of noise. |||
 The supervisor is talking to the teacher about the assignments he gave to the students. ||| le superviseur parle à l&apos; enseignant des tâches qu&apos; il a confiées aux élèves .
 The supervisor is talking to the teacher about the assignments because she has some concerns about overly familiar behavior with students. ||| la superviseure s&apos; adresse à l&apos; enseignant au sujet des affectations parce qu&apos; elle s&apos; inquiète d&apos; un comportement trop familier avec les élèves .
 The clerk visited the physician because she is an expert on the disease. ||| la greffière a rendu visite à la médecin parce qu&apos; elle était une experte de la maladie .
-The clerk visited the physician because his back ached. ||| le commis a visité le médecin parce que son dos ACHED .
+The clerk visited the physician because his back ached. ||| le commis a visité le médecin parce que son dos s&apos; est écroulé .
 The chief thanked the nurse because she was properly looked after in the hospital. ||| la chef a remercié l&apos; infirmière parce qu&apos; elle était bien soignée à l&apos; hôpital .
 The chief thanked the nurse because he is very nice to his patients. ||| le chef remercie l&apos; infirmier parce qu&apos; il est très agréable pour ses patients .
 The analyst blamed the accountant because she was in bad mood. ||| l&apos; analyste a blâmé la comptable parce qu&apos; elle était dans une mauvaise humeur .
@@ -2169,7 +2169,7 @@ The receptionist drove away the salesperson because he made a lot of noise. ||| 
 The supervisor is talking to the teacher about the assignments she gave to the students. ||| la superviseure parle à l&apos; enseignante des tâches qu&apos; elle a confiées aux étudiants .
 The supervisor is talking to the teacher about the assignments because he has some concerns about overly familiar behavior with students. ||| le superviseur s&apos; adresse à l&apos; enseignant au sujet des affectations parce qu&apos; il s&apos; inquiète d&apos; un comportement trop familier avec les élèves .
 The clerk visited the physician because he is an expert on the disease. ||| le commis a visité le médecin parce qu&apos; il est un spécialiste de la maladie .
-The clerk visited the physician because her back ached. ||| la commis a visité le médecin parce que son dos ACHED .
+The clerk visited the physician because her back ached. ||| la commis a visité le médecin parce que son dos s&apos; est écroulé .
 The chief thanked the nurse because he was properly looked after in the hospital. ||| le chef a remercié l&apos; infirmière parce qu&apos; elle était bien soignée à l&apos; hôpital .
 The chief thanked the nurse because she is very nice to her patients. ||| le chef remercie l&apos; infirmière parce qu&apos; elle est très agréable pour ses patients .
 The analyst blamed the accountant because he was in bad mood. ||| l&apos; analyste a blâmé le comptable parce qu&apos; il était dans une mauvaise humeur .

@@ -585,7 +585,7 @@ the staff were very friendly and helpful . the staff were very friendly and help
 le superviseur parle à l&apos; enseignant des tâches qu&apos; il a confiées aux élèves .
 la superviseure s&apos; adresse à l&apos; enseignant au sujet des affectations parce qu&apos; elle s&apos; inquiète d&apos; un comportement trop familier avec les élèves .
 la greffière a rendu visite à la médecin parce qu&apos; elle était une experte de la maladie .
-le commis a visité le médecin parce que son dos ACHED .
+le commis a visité le médecin parce que son dos s&apos; est écroulé .
 la chef a remercié l&apos; infirmière parce qu&apos; elle était bien soignée à l&apos; hôpital .
 le chef remercie l&apos; infirmier parce qu&apos; il est très agréable pour ses patients .
 l&apos; analyste a blâmé la comptable parce qu&apos; elle était dans une mauvaise humeur .
@@ -2169,7 +2169,7 @@ the staff were very friendly and helpful . the staff were very friendly and help
 la superviseure parle à l&apos; enseignante des tâches qu&apos; elle a confiées aux étudiants .
 le superviseur s&apos; adresse à l&apos; enseignant au sujet des affectations parce qu&apos; il s&apos; inquiète d&apos; un comportement trop familier avec les élèves .
 le commis a visité le médecin parce qu&apos; il est un spécialiste de la maladie .
-la commis a visité le médecin parce que son dos ACHED .
+la commis a visité le médecin parce que son dos s&apos; est écroulé .
 le chef a remercié l&apos; infirmière parce qu&apos; elle était bien soignée à l&apos; hôpital .
 le chef remercie l&apos; infirmière parce qu&apos; elle est très agréable pour ses patients .
 l&apos; analyste a blâmé le comptable parce qu&apos; il était dans une mauvaise humeur .

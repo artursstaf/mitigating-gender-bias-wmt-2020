@@ -585,7 +585,7 @@ reģistratore aizdzina pārdevēju , jo viņa izdvesa lielu troksni .
 uzraugs runā ar skolotāju par uzdevumiem , ko viņš uzdevis studentiem .
 priekšniece runā ar skolotāju par uzdevumiem , jo viņai ir zināmas bažas par pārāk labi pazīstamu uzvedību ar studentiem .
 ierēdnis apmeklēja ārstu , jo viņa ir šīs slimības eksperte .
-ierēdnis apmeklēja ārstu , jo viņam mugurā bija ACHED .
+ierēdnis apmeklēja ārstu , jo viņam sāpēja mugura .
 virsaiša pateicās māsai , jo viņa bija pienācīgi aprūpēta slimnīcā .
 priekšnieks pateicās medmāsai , jo ir ļoti jauks pret saviem pacientiem .
 analītiķe vainoja grāmatvedi , jo viņai bija slikts noskaņojums .
@@ -2169,7 +2169,7 @@ reģistratore aizdzina pārdevēju , jo viņš izdvesa lielu troksni .
 uzraugs runā ar skolotāju par uzdevumiem , ko viņa uzdevusi studentiem .
 uzraugs runā ar skolotāju par uzdevumiem , jo viņam ir zināmas bažas par pārāk labi pazīstamu uzvedību ar studentiem .
 ierēdnis apmeklēja ārstu , jo ir šīs slimības eksperts .
-sekretāre apmeklēja ārstu , jo viņai mugurā bija ACHED .
+sekretāre apmeklēja ārstu , jo viņai sāpēja mugura .
 priekšnieks pateicās māsai , jo viņu pienācīgi aprūpēja slimnīcā .
 priekšnieks pateicās māsai , jo viņa ir ļoti jauka pret saviem pacientiem .
 analītiķis vainoja grāmatvedi , jo viņam bija slikts noskaņojums .

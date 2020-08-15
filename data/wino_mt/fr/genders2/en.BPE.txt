@@ -585,7 +585,7 @@ the recep@@ tion@@ ist dro@@ ve away the sal@@ es@@ person because she made a lo
 the supervisor is talking to the teacher about the assignments he gave to the students .
 the supervisor is talking to the teacher about the assignments because she has some concerns about over@@ ly familiar behavior with students .
 the cl@@ erk visited the physician because she is an expert on the disease .
-the cl@@ erk visited the physician because his back ACH@@ ED .
+the cl@@ erk visited the physician because his back ached .
 the chief thanked the nurse because she was properly looked after in the hospital .
 the chief thanked the nurse because he is very nice to his patients .
 the analy@@ st bl@@ amed the accoun@@ tant because she was in bad mo@@ od .
@@ -2169,7 +2169,7 @@ the recep@@ tion@@ ist dro@@ ve away the sal@@ es@@ person because he made a lot
 the supervisor is talking to the teacher about the assignments she gave to the students .
 the supervisor is talking to the teacher about the assignments because he has some concerns about over@@ ly familiar behavior with students .
 the cl@@ erk visited the physician because he is an expert on the disease .
-the cl@@ erk visited the physician because her back ACH@@ ED .
+the cl@@ erk visited the physician because her back ached .
 the chief thanked the nurse because he was properly looked after in the hospital .
 the chief thanked the nurse because she is very nice to her patients .
 the analy@@ st bl@@ amed the accoun@@ tant because he was in bad mo@@ od .

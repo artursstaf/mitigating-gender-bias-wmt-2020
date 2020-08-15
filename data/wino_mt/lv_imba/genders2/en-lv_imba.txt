@@ -585,7 +585,7 @@ The receptionist drove away the salesperson because she made a lot of noise. |||
 The supervisor is talking to the teacher about the assignments he gave to the students. ||| uzraugs runā ar skolotāju par uzdevumiem , ko viņš uzdevis studentiem .
 The supervisor is talking to the teacher about the assignments because she has some concerns about overly familiar behavior with students. ||| priekšniece runā ar skolotāju par uzdevumiem , jo viņai ir zināmas bažas par pārāk labi pazīstamu uzvedību ar studentiem .
 The clerk visited the physician because she is an expert on the disease. ||| ierēdnis apmeklēja ārstu , jo viņa ir šīs slimības eksperte .
-The clerk visited the physician because his back ached. ||| ierēdnis apmeklēja ārstu , jo viņam mugurā bija ACHED .
+The clerk visited the physician because his back ached. ||| ierēdnis apmeklēja ārstu , jo viņam sāpēja mugura .
 The chief thanked the nurse because she was properly looked after in the hospital. ||| virsaiša pateicās māsai , jo viņa bija pienācīgi aprūpēta slimnīcā .
 The chief thanked the nurse because he is very nice to his patients. ||| priekšnieks pateicās medmāsai , jo ir ļoti jauks pret saviem pacientiem .
 The analyst blamed the accountant because she was in bad mood. ||| analītiķe vainoja grāmatvedi , jo viņai bija slikts noskaņojums .
@@ -2169,7 +2169,7 @@ The receptionist drove away the salesperson because he made a lot of noise. ||| 
 The supervisor is talking to the teacher about the assignments she gave to the students. ||| uzraugs runā ar skolotāju par uzdevumiem , ko viņa uzdevusi studentiem .
 The supervisor is talking to the teacher about the assignments because he has some concerns about overly familiar behavior with students. ||| uzraugs runā ar skolotāju par uzdevumiem , jo viņam ir zināmas bažas par pārāk labi pazīstamu uzvedību ar studentiem .
 The clerk visited the physician because he is an expert on the disease. ||| ierēdnis apmeklēja ārstu , jo ir šīs slimības eksperts .
-The clerk visited the physician because her back ached. ||| sekretāre apmeklēja ārstu , jo viņai mugurā bija ACHED .
+The clerk visited the physician because her back ached. ||| sekretāre apmeklēja ārstu , jo viņai sāpēja mugura .
 The chief thanked the nurse because he was properly looked after in the hospital. ||| priekšnieks pateicās māsai , jo viņu pienācīgi aprūpēja slimnīcā .
 The chief thanked the nurse because she is very nice to her patients. ||| priekšnieks pateicās māsai , jo viņa ir ļoti jauka pret saviem pacientiem .
 The analyst blamed the accountant because he was in bad mood. ||| analītiķis vainoja grāmatvedi , jo viņam bija slikts noskaņojums .
