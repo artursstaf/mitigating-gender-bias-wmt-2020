@@ -49,4 +49,5 @@ python -m sockeye.train \
   --checkpoint-frequency 4000 \
   --weight-init-xavier-factor-type avg \
   --shared-vocab \
-  --keep-last-params=35
+  --keep-last-params=35 \
+  --disable-device-locking

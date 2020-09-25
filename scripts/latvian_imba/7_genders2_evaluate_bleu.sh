@@ -5,4 +5,4 @@ PROJECT_ROOT=$(dirname "$(dirname "$DIR")")
 
 DEVICE_IDS=$1
 
-bash "$PROJECT_ROOT"/scripts/common/genders2_evaluate_bleu.sh lv_imba genders2 newsdev2017 "$DEVICE_IDS"
+bash "$PROJECT_ROOT"/scripts/common/genders2_eval_test.sh lv_imba genders2 train newstest2017 "$DEVICE_IDS" wmt17

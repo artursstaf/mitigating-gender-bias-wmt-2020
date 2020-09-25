@@ -30,6 +30,8 @@ python scripts/python/genders_bpe.py \
 --bpe_sentences data/wino_mt/$LANG/$EXPERIMENT/en.BPE.txt \
 >data/wino_mt/$LANG/$EXPERIMENT/en.genders.BPE.txt
 
+sed -i 's/[MFN]/F/g'  data/wino_mt/$LANG/$EXPERIMENT/en.genders.BPE.txt
+
 # Translate gender bias dataset
 python -m sockeye.translate -m models/"$LANG"/nmt_"$LANG"_"$EXPERIMENT" \
 --input data/wino_mt/"$LANG"/"$EXPERIMENT"/en.BPE.txt \
@@ -48,6 +50,8 @@ python scripts/python/generate_genders.py --lang "${LANG:0:2}" --source data/win
 --output data/wino_mt/"$LANG"/"$EXPERIMENT"/"$LANG".genders.txt
 
 # Run evaluation
+mkdir -p  evaluation_logs/"$LANG"/"$EXPERIMENT"
+
 (
   cd mt_gender/src || exit
   export FAST_ALIGN_BASE="../../tools/fast_align"

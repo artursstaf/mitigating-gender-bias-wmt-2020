@@ -33,6 +33,7 @@ export CUDA_VISIBLE_DEVICES="$DEVICE_IDS"
 python scripts/python/generate_genders.py --lang "${LANG:0:2}" --source data/wino_mt/"$LANG"/"$EXPERIMENT"/"$LANG".txt \
   --output data/wino_mt/"$LANG"/"$EXPERIMENT"/"$LANG".genders.txt
 
+mkdir -p  evaluation_logs/"$LANG"/"$EXPERIMENT"
 # Run evaluation
 (
   cd mt_gender/src || exit
