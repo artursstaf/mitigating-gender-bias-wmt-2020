@@ -1,7 +1,7 @@
 import argparse
 
 
-def align_bpe(wino_mt, tok_en_sentences):
+def extract_genders(wino_mt, tok_en_sentences):
     with open(wino_mt, 'r') as f:
         wino_mt = f.read().strip().split('\n')
     wino_mt = [i.split('\t') for i in wino_mt]
@@ -33,7 +33,7 @@ def main():
     parser.add_argument("--tokenized_sentences", help="pre-processed EN sentences from WinoMT")
 
     args = parser.parse_args()
-    align_bpe(args.wino_mt, args.tokenized_sentences)
+    extract_genders(args.wino_mt, args.tokenized_sentences)
 
 
 if __name__ == "__main__":

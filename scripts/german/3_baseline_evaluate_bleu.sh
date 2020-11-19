@@ -5,4 +5,4 @@ PROJECT_ROOT=$(dirname "$(dirname "$DIR")")
 
 DEVICE_IDS=$1
 
-bash "$PROJECT_ROOT"/scripts/common/baseline_evaluate_bleu.sh de newstest2018 "$DEVICE_IDS"
+bash "$PROJECT_ROOT"/scripts/common/baseline_eval_test.sh de newstest2018 "$DEVICE_IDS" wmt18

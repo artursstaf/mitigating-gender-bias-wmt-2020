@@ -1,8 +1,8 @@
 import argparse
-from datetime import datetime
 from pathlib import Path
 
 import stanza
+import tqdm
 
 default_package = {
     'lt': 'alksnis',
@@ -11,13 +11,6 @@ default_package = {
     'ru': 'SynTagRus',
     'de': 'hdt'
 }
-
-
-def batch(iterable, n):
-    l = len(iterable)
-    for ndx in range(0, l, n):
-        yield iterable[ndx:min(ndx + n, l)]
-
 
 def gen_genders(lang, source, output):
     with open(source, 'r') as f:
@@ -31,40 +24,29 @@ def gen_genders(lang, source, output):
         stanza.download(lang, package=default_package[lang], dir=str(nlp_resources))
 
     config = {
-        'use_gpu': True,
-        'processors': 'tokenize,pos,lemma',
+        'processors': 'tokenize,pos',
         'tokenize_pretokenized': True,
         'lang': lang,
-        'package': default_package[lang],
-        'pos_batch_size': 5000,
-        'lemma_batch_size': 1500
+        'package': default_package[lang]
     }
-
-    BATCH_SIZE = 5000
 
     nlp = stanza.Pipeline(**config)
 
     genders = []
-    for index, lines in enumerate(batch(source, BATCH_SIZE)):
-        lines = "\n".join(lines)
+    for line in tqdm.tqdm(source):
+        if line.isspace() or line is None or len(line) == 0:
+            continue
 
-        start = datetime.now()
-        doc = nlp(lines)
-        seconds_for_batch = (datetime.now() - start).total_seconds()
-
-        print(
-            f"Nr. item: {(index + 1) * BATCH_SIZE}, Seconds for batch: {seconds_for_batch}, sentences per second: {BATCH_SIZE / seconds_for_batch}")
-
-        for sentence in doc.sentences:
-            for tok in sentence.words:
-                key = 'Gender='
-                if tok.feats is None or tok.feats.find(key) == -1:
-                    gender = 'U '
-                else:
-                    offset = tok.feats.find(key)
-                    gender = tok.feats[offset + len(key): offset + len(key) + 1] + ' '
-                genders.append(gender)
-            genders.append('\n')
+        doc = nlp(line)
+        for tok in doc.sentences[0].words:
+            key = 'Gender='
+            if tok.feats is None or tok.feats.find(key) == -1:
+                gender = 'U '
+            else:
+                offset = tok.feats.find(key)
+                gender = tok.feats[offset + len(key): offset + len(key) + 1] + ' '
+            genders.append(gender)
+        genders.append('\n')
 
     with open(output, 'w') as f:
         f.write(''.join(genders).strip())

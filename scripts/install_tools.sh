@@ -17,6 +17,9 @@ wget https://raw.githubusercontent.com/awslabs/sockeye/master/requirements/requi
 pip install sockeye --no-deps -r requirements.gpu-cu${CUDA_VERSION}.txt
 rm requirements.gpu-cu${CUDA_VERSION}.txt
 
+# Install AllenNLP
+pip install allennlp==1.0.0 allennlp-models==1.0.0 scikit-learn
+
 # Install pre-processing tools
 pip install subword-nmt
 git clone git@github.com:marian-nmt/moses-scripts.git ./tools/moses-scripts
@@ -37,4 +40,5 @@ git clone git@github.com:artursstaf/mt_gender.git
   git pull
   git checkout genders-file
 )
-pip install docopt tqdm spacy pymorphy2 argparse stanza
+# Additional packages
+pip install docopt tqdm spacy pymorphy2 argparse stanza sacrebleu
