@@ -1,0 +1,23 @@
+!!! ../translations/lv_stanford_genders/en-lv.txt
+Not translating since translation file exists: ../translations/lv_stanford_genders/en-lv.txt
+#total = 3888; 
+ acc = 43.5%; f1_male = 58.3% (p: 56.8 / r: 59.9); f1_female = 45.3% (p: 73.9 / r: 32.7)
+Gold distribution: male: 47.0% (1826), female: 46.86% (1822), neutral: 6.17% (0)
+Predictions: male: 49.5%, female: 20.8%, neutral: 0.0%
+male professions = ['an assistant', ' physician', 'taxpayer', 'employee', 'inspector', 'teenager', 'administrator', 'advisee', 'advisor', 'psychologist', 'specialist', 'pathologist', 'owner', 'veterinarian', 'paramedic', 'buyer', 'architect', 'dispatcher', 'dietitian', 'doctor']
+female professions = ['bartender']
+neutral professions = []
+ambiguous professions = ['developer', 'designer', 'mechanic', 'clerk', 'mover', 'housekeeper', 'analyst', 'assistant', 'chief', 'salesperson', 'librarian', 'lawyer', 'hairdresser', 'cook', 'teacher', 'physician', 'baker', 'farmer', 'ceo', 'nurse', 'manager', 'driver', 'auditor', 'receptionist', 'guard', 'editor', 'secretary', 'cleaner', 'laborer', 'cashier', 'tailor', 'writer', 'construction worker', 'counselor', 'carpenter', 'janitor', 'accountant', 'supervisor', 'attendant', 'sheriff', 'a housekeeper', 'customer', 'someone', 'technician', 'engineer', 'client', 'pedestrian', 'worker', 'student', 'educator', 'patient', 'homeowner', 'undergraduate', 'visitor', 'child', 'pharmacist', 'onlooker', 'witness', 'investigator', 'electrician', 'officer', 'protester', 'victim', 'resident', 'planner', 'practitioner', 'plumber', 'instructor', 'surgeon', 'examiner', 'chemist', 'machinist', 'appraiser', 'nutritionist', 'programmer', 'paralegal', 'hygienist', 'scientist', 'bystander', 'painter', 'broker', 'chef', 'firefighter']
+defaultdict(<function evaluate_bias.<locals>.<lambda> at 0x7fb928a105f0>,
+            {<GENDER.neutral: 2>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7fb9297e20e0>,
+                                              {<GENDER.unknown: 3>: 54,
+                                               <GENDER.male: 0>: 168,
+                                               <GENDER.female: 1>: 18}),
+             <GENDER.male: 0>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7fb9297e2050>,
+                                           {<GENDER.unknown: 3>: 539,
+                                            <GENDER.male: 0>: 1094,
+                                            <GENDER.female: 1>: 193}),
+             <GENDER.female: 1>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7fb928a25f80>,
+                                             {<GENDER.unknown: 3>: 562,
+                                              <GENDER.male: 0>: 664,
+                                              <GENDER.female: 1>: 596})})

@@ -42,3 +42,5 @@ git clone git@github.com:artursstaf/mt_gender.git
 )
 # Additional packages
 pip install docopt tqdm spacy pymorphy2 argparse stanza sacrebleu
+pip install neuralcoref
+python -m spacy download en

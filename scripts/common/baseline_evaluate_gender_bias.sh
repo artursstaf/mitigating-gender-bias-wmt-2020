@@ -20,6 +20,7 @@ subword-nmt apply-bpe -c data/"$LANG"/bpe.codes --vocabulary data/"$LANG"/bpe.vo
 
 # Translate gender bias dataset
 python -m sockeye.translate -m models/"$LANG"/nmt_"$LANG"_"$EXPERIMENT" \
+  --batch-size 128 \
   --input data/wino_mt/"$LANG"/"$EXPERIMENT"/en.BPE.txt --device-ids $DEVICE_IDS |
   sed -r 's/@@( |$)//g' >data/wino_mt/"$LANG"/"$EXPERIMENT"/"$LANG".txt
 
@@ -33,7 +34,7 @@ export CUDA_VISIBLE_DEVICES="$DEVICE_IDS"
 python scripts/python/generate_genders.py --lang "${LANG:0:2}" --source data/wino_mt/"$LANG"/"$EXPERIMENT"/"$LANG".txt \
   --output data/wino_mt/"$LANG"/"$EXPERIMENT"/"$LANG".genders.txt
 
-mkdir -p  evaluation_logs/"$LANG"/"$EXPERIMENT"
+mkdir -p evaluation_logs/"$LANG"/"$EXPERIMENT"
 # Run evaluation
 (
   cd mt_gender/src || exit

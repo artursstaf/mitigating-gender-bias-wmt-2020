@@ -22,7 +22,10 @@ def align_bpe(genders, sentences):
             i, cur_gender = next(gend_it)
 
             for word in sent.split(' '):
-                assert cur_gender is not None
+                if cur_gender is None:
+                    print(sent)
+                    print(gend)
+                    assert cur_gender is not None
                 aligned_sentence_genders.append(cur_gender)
                 if not word.endswith("@@"):
                     i, cur_gender = next(gend_it, (float('inf'), None))

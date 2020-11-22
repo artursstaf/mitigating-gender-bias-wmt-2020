@@ -8,14 +8,14 @@ male professions = ['an assistant', 'a housekeeper']
 female professions = []
 neutral professions = []
 ambiguous professions = ['developer', 'designer', 'mechanic', 'clerk', 'mover', 'housekeeper', 'analyst', 'assistant', 'chief', 'salesperson', 'librarian', 'lawyer', 'hairdresser', 'cook', 'teacher', 'physician', 'baker', 'farmer', 'ceo', 'nurse', 'manager', 'driver', 'auditor', 'receptionist', 'guard', 'editor', 'secretary', 'cleaner', 'laborer', 'cashier', 'tailor', 'writer', 'construction worker', 'counselor', 'carpenter', 'janitor', 'accountant', 'supervisor', 'attendant', 'sheriff']
-defaultdict(<function evaluate_bias.<locals>.<lambda> at 0x7f46f3f859e0>,
-            {<GENDER.male: 0>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7f46f3f89b00>,
-                                           {<GENDER.neutral: 2>: 1,
+defaultdict(<function evaluate_bias.<locals>.<lambda> at 0x7f778404e560>,
+            {<GENDER.male: 0>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7f7784050710>,
+                                           {<GENDER.unknown: 3>: 209,
+                                            <GENDER.neutral: 2>: 1,
                                             <GENDER.male: 0>: 537,
-                                            <GENDER.female: 1>: 47,
-                                            <GENDER.unknown: 3>: 209}),
-             <GENDER.female: 1>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7f46f3f897a0>,
-                                             {<GENDER.neutral: 2>: 1,
+                                            <GENDER.female: 1>: 47}),
+             <GENDER.female: 1>: defaultdict(<function evaluate_bias.<locals>.<lambda>.<locals>.<lambda> at 0x7f7784050200>,
+                                             {<GENDER.unknown: 3>: 129,
+                                              <GENDER.neutral: 2>: 1,
                                               <GENDER.male: 0>: 351,
-                                              <GENDER.female: 1>: 309,
-                                              <GENDER.unknown: 3>: 129})})
+                                              <GENDER.female: 1>: 309})})

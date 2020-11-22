@@ -5,4 +5,4 @@ PROJECT_ROOT=$(dirname "$(dirname "$DIR")")
 
 DEVICE_IDS=$1
 
-bash "$PROJECT_ROOT"/scripts/common/genders2_evaluate_gender_bias.sh de genders2 "$DEVICE_IDS" true
+bash "$PROJECT_ROOT"/scripts/common/genders2_evaluate_gender_bias.sh de genders2 "$DEVICE_IDS" allennlp
