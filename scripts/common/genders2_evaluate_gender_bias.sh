@@ -61,7 +61,7 @@ huggingface)
     --bpe_sentences data/wino_mt/$LANG/$EXPERIMENT/en.BPE.txt \
     >data/wino_mt/$LANG/$EXPERIMENT/en.genders.BPE.txt
   input_TGA=data/wino_mt/$LANG/$EXPERIMENT/en.genders.BPE.txt
-  output_translation=data/wino_mt/"$LANG"/"$EXPERIMENT"/base."$LANG".txt
+  output_translation=data/wino_mt/"$LANG"/"$EXPERIMENT"/oracle."$LANG".txt
   eval_log_prefix=""
   ;;
 
