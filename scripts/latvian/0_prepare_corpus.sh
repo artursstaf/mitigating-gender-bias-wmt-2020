@@ -3,6 +3,11 @@ set -eu
 DIR=$(dirname "$(readlink -f ".")")
 PROJECT_ROOT=$(dirname "$(dirname "$DIR")")
 
+LANG=lv
+
+mkdir -p "$PROJECT_ROOT"/data/$LANG
+cd "$PROJECT_ROOT"/data/$LANG
+
 # Dowload parralel corpus
 wget http://data.statmt.org/wmt17/translation-task/preprocessed/lv-en/corpus.tc.en.gz
 gunzip corpus.tc.en.gz
@@ -12,6 +17,6 @@ curl http://data.statmt.org/wmt17/translation-task/preprocessed/lv-en/dev.tgz | 
 rm *.sgm
 
 (
-  cd ../models
+  cd "$PROJECT_ROOT"/models
   curl http://data.statmt.org/wmt17/translation-task/preprocessed/lv-en/true.tgz | tar xvzf -
 )

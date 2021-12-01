@@ -1,10 +1,13 @@
 #!/bin/bash
 
-cd ../
+set -e
+DIR=$(dirname "$(readlink -f "$0")")
+PROJECT_ROOT="$(dirname "$DIR")"
+cd "$PROJECT_ROOT"
 
-mkdir models
-mkdir data
-mkdir tools
+mkdir -p models
+mkdir -p data
+mkdir -p tools
 
 CUDA_VERSION=101
 
