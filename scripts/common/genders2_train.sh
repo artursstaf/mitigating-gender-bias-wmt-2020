@@ -34,7 +34,6 @@ python -m sockeye.train \
   --transformer-positional-embedding-type fixed \
   --num-words 50000 \
   --label-smoothing 0.1 \
-  --weight-tying \
   --weight-tying-type=src_trg_softmax \
   --num-embed 512:512 \
   --gradient-clipping-threshold=-1 \
@@ -47,7 +46,7 @@ python -m sockeye.train \
   --decode-and-evaluate-device-id "${device_id_arr[0]}" \
   --device-ids $DEVICE_IDS \
   --max-seq-len 128 \
-  --checkpoint-frequency 4000 \
+  --checkpoint-interval 4000 \
   --weight-init-xavier-factor-type avg \
   --shared-vocab \
   --keep-last-params=35 \

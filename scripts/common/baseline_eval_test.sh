@@ -31,8 +31,8 @@ mkdir -p evaluation_logs/"$LANG"/"$EXPERIMENT"
 
   # Prepare test reference
   sacrebleu -t $WMT_SET -l en-${LANG:0:2} --echo ref > $VALIDATION.raw.$LANG
-  "$TOOLS"/moses-scripts/scripts/tokenizer/normalize-punctuation.perl -l ${LANG:0:2}  <$VALIDATION.raw.$LANG |
-    "$TOOLS"/moses-scripts/scripts/tokenizer/tokenizer.perl -a -l ${LANG:0:2} |
+  "$TOOLS"/moses-scripts/scripts/tokenizer/normalize-punctuation.perl -l ${LANG:0:2}  <$VALIDATION.raw.$LANG >$VALIDATION.normal.$LANG
+  "$TOOLS"/moses-scripts/scripts/tokenizer/tokenizer.perl -a -l ${LANG:0:2} < VALIDATION.normal.$LANG |
     "$TOOLS"/moses-scripts/scripts/recaser/truecase.perl -model $PROJECT_ROOT/models/truecase-model.${LANG:0:2} >"$VALIDATION".tc.$LANG
   subword-nmt apply-bpe -c bpe.codes --vocabulary bpe.vocab."$LANG" --vocabulary-threshold $threshold <"$VALIDATION".tc."$LANG" >"$VALIDATION".tc.BPE."$LANG"
 )
@@ -51,4 +51,4 @@ cat data/dev_translations/"$LANG"/"$EXPERIMENT"/"$VALIDATION".tc."$LANG" |
   perl "$TOOLS"/moses-scripts/scripts/recaser/detruecase.perl |
   perl "$TOOLS"/moses-scripts/scripts/tokenizer/detokenizer.perl -l "${LANG:0:2}" >data/dev_translations/"$LANG"/"$EXPERIMENT"/"$VALIDATION".tc.detok."$LANG"
 
-sacrebleu data/"$LANG"/$WMT_SET.normal.ref  <data/dev_translations/"$LANG"/"$EXPERIMENT"/"$VALIDATION".tc.detok."$LANG" >evaluation_logs/"$LANG"/"$EXPERIMENT"/sacrebleu.txt
+sacrebleu data/"$LANG"/$VALIDATION.normal.$LANG  <data/dev_translations/"$LANG"/"$EXPERIMENT"/"$VALIDATION".tc.detok."$LANG" >evaluation_logs/"$LANG"/"$EXPERIMENT"/sacrebleu.txt

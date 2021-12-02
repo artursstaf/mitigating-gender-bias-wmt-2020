@@ -1,6 +1,6 @@
 #!/bin/bash
 set -eu
-DIR=$(dirname "$(readlink -f ".")")
+DIR=$(dirname "$(readlink -f "$0")")
 PROJECT_ROOT=$(dirname "$(dirname "$DIR")")
 PYTHON_SCRIPTS=$PROJECT_ROOT/scripts/python
 TOOLS=$PROJECT_ROOT/tools

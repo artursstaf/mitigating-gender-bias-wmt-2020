@@ -45,7 +45,8 @@ mkdir -p data/"$LANG"/"$EXPERIMENT"
     rm "$file.tc.$LANG"?*
 
     # Generate word alignments
-    alignments_folder=../../alignments
+    alignments_folder="$PROJECT_ROOT"/data/alignments
+    mkdir -p $alignments_folder
     paste -d "|" "$file".tc."$LANG" "$file".tc.en | sed 's/|/ ||| /g' >$alignments_folder/"$file"."$LANG"-en.txt
 
     if [[ "$file" == "$CORPUS" ]]; then
